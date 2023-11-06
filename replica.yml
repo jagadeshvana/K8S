@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-rc
+spec:
+  replicas: 5
+  selector:
+    app: my-app
+  template:
+    metadata:
+      name: test-pod
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-test
+          image: jagadeshgctech/softwaremakers
+          ports:
+            - containerPort: 8080
+
+          
